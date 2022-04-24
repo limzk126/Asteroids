@@ -6,11 +6,15 @@ public class GameManager: MonoBehaviour
 {
     public Player player;
 
+    public ParticleSystem explosion;
+
     public int lives = 3;
 
     public float respawnTime = 3.0f;
 
     public float InvulnerabilityTime = 3.0f;
+
+    public int score = 0;
 
     public static GameManager gm;
 
@@ -23,6 +27,8 @@ public class GameManager: MonoBehaviour
     }
 
     public void PlayerDied() {
+        this.explosion.transform.position = this.player.transform.position;
+        this.explosion.Play();
 
         if (--this.lives <= 0) {
             GameOver();
@@ -44,6 +50,15 @@ public class GameManager: MonoBehaviour
     }
 
     private void GameOver() {
+        this.lives = 3;
+        this.score = 0;
+        Respawn();
+    }
 
+    public void AsteroidDestroyed(Asteroid asteroid) {
+        this.explosion.transform.position = asteroid.transform.position;
+        this.explosion.Play();
+
+        this.score += (int) ((1 / asteroid.size) * 20.0f);
     }
 }
