@@ -15,7 +15,7 @@ public class Asteroid : MonoBehaviour
 
     public float maxSize = 1.5f;
 
-    public float speed = 50.0f;
+    public float speed = 75.0f;
 
     public float maxLifetime = 30.0f;
 
@@ -23,6 +23,7 @@ public class Asteroid : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigidbody = GetComponent<Rigidbody2D>();
     }
+
     private void Start(){
         _spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
 
@@ -40,5 +41,23 @@ public class Asteroid : MonoBehaviour
         Destroy(this.gameObject, this.maxLifetime);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.tag == "Bullet") {
+            if ((this.size / 2) >= this.minSize) {
+                CreateSplit();
+                CreateSplit();
+            }
 
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void CreateSplit() {
+        Vector2 position = this.transform.position;
+        position += Random.insideUnitCircle * 0.5f;
+
+        Asteroid half = Instantiate(this, position, this.transform.rotation);
+        half.size = this.size / 2;
+        half.SetTrajectory(Random.insideUnitCircle.normalized);
+    }
 }

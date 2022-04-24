@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 106841981}
   - component: {fileID: 106841980}
   - component: {fileID: 106841979}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf416453d9ae6d449f712ea9194b950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidPrefab: {fileID: 0}
+  asteroidPrefab: {fileID: 7367204206681426871, guid: 9c24469eb7a274745a8cd6f236896444, type: 3}
   trajectoryVariance: 15
   spawnRate: 2
   spawnDistance: 15
@@ -415,7 +415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 681858431}
   - component: {fileID: 681858430}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1146829756}
   - component: {fileID: 1146829755}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1310222110}
   - component: {fileID: 1310222109}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1472127546}
   - component: {fileID: 1472127545}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
