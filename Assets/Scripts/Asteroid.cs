@@ -18,7 +18,7 @@ public class Asteroid : MonoBehaviour
     public float speed = 75.0f;
 
     public float maxLifetime = 30.0f;
-
+    
     private void Awake() {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigidbody = GetComponent<Rigidbody2D>();
